@@ -83,9 +83,9 @@ fun.table.anova<-function(Name,variable, factor1, factor2){
 }
 #------------------------------------------------
 TMS<-fun.table.anova(Name="TMS",variable= data$TMS, factor1= data$Nutriente2, factor2= data$Luz)
-RLT<-fun.table.anova(Name="RLT",variable= data$TMS, factor1= data$Nutriente2, factor2= data$Luz)
-RRT<-fun.table.anova(Name="RRT",variable= data$TMS, factor1= data$Nutriente2, factor2= data$Luz)
-RRV<-fun.table.anova(Name="RRV",variable= data$TMS, factor1= data$Nutriente2, factor2= data$Luz)
+RLT<-fun.table.anova(Name="RLT",variable= data$RLT, factor1= data$Nutriente2, factor2= data$Luz)
+RRT<-fun.table.anova(Name="RRT",variable= data$RRT, factor1= data$Nutriente2, factor2= data$Luz)
+RRV<-fun.table.anova(Name="RRV",variable= data$RRV, factor1= data$Nutriente2, factor2= data$Luz)
 #------------------------------------------------
 
 
@@ -97,7 +97,7 @@ Cuadro_1<-merge(TMS, RLT, all=TRUE)
 Cuadro_1<-merge(Cuadro_1, RRT, all=TRUE)
 Cuadro_1<-merge(Cuadro_1, RRV, all=TRUE)
 #------------------------------------------------
-write.xlsx(time_course, "Results/Cuadro 1.xlsx",
+write.xlsx(Cuadro_1, "Results/Cuadro 1.xlsx",
            sheetName="Cuadro 1",col.names=TRUE,
            row.names=FALSE, append=FALSE,
            showNA=TRUE, password=NULL)
