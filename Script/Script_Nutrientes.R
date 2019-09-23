@@ -82,8 +82,8 @@ fun.table.anova<-function(Name,variable, factor1, factor2){
   return(data.anova)
 }
 #------------------------------------------------
-TMS<-fun.table.anova(Name="TMS",variable= data$TMS, factor1= data$Nutriente2, factor2= data$Luz)
-RLT<-fun.table.anova(Name="RLT",variable= data$RLT, factor1= data$Nutriente2, factor2= data$Luz)
+BT<-fun.table.anova(Name="BT",variable= data$BT, factor1= data$Nutriente2, factor2= data$Luz)
+RHT<-fun.table.anova(Name="RHT",variable= data$RHT, factor1= data$Nutriente2, factor2= data$Luz)
 RRT<-fun.table.anova(Name="RRT",variable= data$RRT, factor1= data$Nutriente2, factor2= data$Luz)
 RRV<-fun.table.anova(Name="RRV",variable= data$RRV, factor1= data$Nutriente2, factor2= data$Luz)
 #------------------------------------------------
@@ -93,7 +93,7 @@ RRV<-fun.table.anova(Name="RRV",variable= data$RRV, factor1= data$Nutriente2, fa
 #------------------------------------------------
 # Cuadro 1
 #------------------------------------------------
-Cuadro_1<-merge(TMS, RLT, all=TRUE)
+Cuadro_1<-merge(BT, RHT, all=TRUE)
 Cuadro_1<-merge(Cuadro_1, RRT, all=TRUE)
 Cuadro_1<-merge(Cuadro_1, RRV, all=TRUE)
 #------------------------------------------------
@@ -113,7 +113,7 @@ pdf(file = "Results/Fig. 1.pdf",
     width = 10, height = 10)
 #------------------------------------------------
 par(xpd = FALSE,mfrow=c(2,2),mgp = c(2.5,0.5,0), mar = c(6.5,4,1,1))
-pirateplot(formula = TMS ~ Luz + Nutriente2, data = data, 
+pirateplot(formula = BT ~ Luz + Nutriente2, data = data, 
            main = "", xlab = "", ylab = "Peso seco total (mg, ±SE)",
            ylim=c(0.0,1.6),point.pch=NA, 
            bar.f.col=c("white", "gray45"),avg.line.fun=mean,plot=TRUE,
@@ -127,7 +127,7 @@ pirateplot(formula = TMS ~ Luz + Nutriente2, data = data,
            inf.method="se")
 par(xpd = TRUE)
 #------------------------------------------------
-pirateplot(formula = RLT ~ Luz + Nutriente2, data = data, 
+pirateplot(formula = RHT ~ Luz + Nutriente2, data = data, 
            main = "", xlab = "", ylab = "Relación peso seco hojas/total (±SE)",
            ylim=c(0.0,0.8),point.pch=NA, 
            bar.f.col=c("white", "gray45"),avg.line.fun=mean,plot=TRUE,
