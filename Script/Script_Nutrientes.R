@@ -37,6 +37,9 @@ data<-na.omit(data)
 if(!require(yarrr)){githubinstall("yarrr")}
 if(!require(openxlsx)){githubinstall("openxlsx")}
 if(!require(broom)){githubinstall("broom")}
+if(!require(lsmeans)){githubinstall("lsmeans")}
+if(!require(multcomp)){githubinstall("multcomp")}
+if(!require(multcomp)){githubinstall("multcompView")}
 #------------------------------------------------
 
 
@@ -61,7 +64,7 @@ fun.table.anova<-function(Name,variable, factor1, factor2){
   NutrientesXLuz<-round(coef[3,], 3)
   P<-data.frame(Nutrientes, Luz, NutrientesXLuz)
   
-  require(lsmeans)
+  library(lsmeans)
   lsm = lsmeans(model, pairwise ~ factor1*factor2, adjust="B")
   t1<-data.frame(cld(lsm[[1]], alpha=.05, Letters=letters))
   t2<-data.frame(t1[c(1)],t1[c(2)],t1[c(3)],t1[c(4)],t1[c(8)])
