@@ -34,6 +34,7 @@ data<-na.omit(data)
 #------------------------------------------------
 # Packages
 #------------------------------------------------
+install.packages("githubinstall")
 if(!require(yarrr)){githubinstall("yarrr")}
 if(!require(openxlsx)){githubinstall("openxlsx")}
 if(!require(broom)){githubinstall("broom")}
