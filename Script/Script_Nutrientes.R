@@ -32,15 +32,17 @@ data<-na.omit(data)
 
 
 #------------------------------------------------
-# Packages
+# Packages: Usar la última version de R y RStudio
 #------------------------------------------------
 install.packages("githubinstall")
+library("githubinstall")
 if(!require(yarrr)){githubinstall("yarrr")}
 if(!require(openxlsx)){githubinstall("openxlsx")}
 if(!require(broom)){githubinstall("broom")}
 if(!require(lsmeans)){githubinstall("lsmeans")}
 if(!require(multcomp)){githubinstall("multcomp")}
 if(!require(multcomp)){githubinstall("multcompView")}
+# Recordar cargar los paquetes despues de la instalación
 #------------------------------------------------
 
 
