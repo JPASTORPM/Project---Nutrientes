@@ -39,6 +39,7 @@ library("githubinstall")
 if(!require(yarrr)){githubinstall("yarrr")}
 if(!require(openxlsx)){githubinstall("openxlsx")}
 if(!require(broom)){githubinstall("broom")}
+require(broom)
 if(!require(lsmeans)){githubinstall("lsmeans")}
 if(!require(multcomp)){githubinstall("multcomp")}
 if(!require(multcomp)){githubinstall("multcompView")}
